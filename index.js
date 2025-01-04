@@ -20,23 +20,15 @@ console.log(`Bot ist online als ${client.user.tag}`);
 
 // Event: Neuer Member tritt dem Server bei
 client.on('guildMemberAdd', async (member) => {
-try {
+    try {
     const channel = member.guild.channels.cache.get(config.welcomeChannelId);
     if (!channel) return console.log("Willkommenskanal nicht gefunden!");
-
-    // Willkommen-Bild generieren
-    const welcomeImage = await generateWelcomeImage(member);
-
-    // Bild senden
-    await channel.send({
-    content: `Welcome to PF Lufthansa Virtual, ${member}!`,
-    files: [welcomeImage],
-    });
-
+      // Alternative Nachricht ohne Bild
+    await channel.send(`Welcome to PF Lufthansa Virtual, ${member}!`);
     console.log(`Willkommensnachricht für ${member.user.tag} gesendet!`);
-} catch (error) {
+    } catch (error) {
     console.error("Fehler beim Senden der Willkommensnachricht:", error);
-}
+    }
 });
 
 // Event: Bot speichert, was im Chat gesagt wird
