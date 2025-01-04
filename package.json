@@ -1,0 +1,14 @@
+{
+    "name": "discord-bot",
+    "version": "1.0.0",
+    "description": "Discord bot for PF Lufthansa Virtual",
+    "main": "index.js",
+    "scripts": {
+    "start": "node index.js"
+    },
+    "dependencies": {
+    "discord.js": "^14.0.0",
+    "dotenv": "^16.0.0",
+    "canvas": "^2.11.0"
+    }
+}
